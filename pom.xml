@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.acgawade</groupId>
 	<artifactId>honeySpace</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>honeySpace</name>
 	<description>Academic project for Cloud Platform Programming using Spring Boot</description>
 	<properties>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
+			<version>42.5.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

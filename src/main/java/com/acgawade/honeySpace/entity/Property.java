@@ -1,0 +1,39 @@
+package com.acgawade.honeySpace.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.net.URI;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+
+@Entity
+@NoArgsConstructor
+@Data
+public class Property {
+    @Id
+    @GeneratedValue
+    private UUID id;
+    private String name;
+    private String address;
+    private String eircode;
+    private String postalCode;
+    private BigDecimal price;
+    private BigDecimal area;
+    private LocalDate availableFrom;
+    private String energyRatings;
+    private Integer bedrooms;
+    private Integer bathrooms;
+    private List<String> amenities;
+    private List<String> images;
+    private String status;
+    private String postedBy;
+    private LocalDateTime postedOn;
+    private LocalDateTime modifiedOn;
+}

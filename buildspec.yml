@@ -27,7 +27,10 @@ phases:
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$Project >result.json
       - cat result.json
       - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
-
+  post_build:
+    commands:
+      - mvn package
+      - mv target/honeySpace-0.0.1.jar honeySpace-0.0.1.jar
 artifacts:
   files:
     - '**/*'

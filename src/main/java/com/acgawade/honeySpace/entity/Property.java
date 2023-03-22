@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.net.URI;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,6 +22,7 @@ public class Property {
     private String name;
     private String address;
     private String eircode;
+    private String description;
     private String postalCode;
     private BigDecimal price;
     private BigDecimal area;

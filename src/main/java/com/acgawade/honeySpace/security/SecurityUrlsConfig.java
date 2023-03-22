@@ -28,7 +28,7 @@ public class SecurityUrlsConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.cors().configurationSource(request -> {
             var cors = new CorsConfiguration();
-            cors.setAllowedOrigins(List.of("http://localhost:4200", "http://127.0.0.1:4200"));
+            cors.setAllowedOrigins(List.of("http://localhost:4200", "http://127.0.0.1:4200","http://103.226.31.73:4200"));
             cors.setAllowedMethods(List.of("GET","POST", "PUT", "DELETE", "OPTIONS"));
             cors.setAllowedHeaders(List.of("*"));
             return cors;

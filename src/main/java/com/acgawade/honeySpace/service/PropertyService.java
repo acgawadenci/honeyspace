@@ -33,6 +33,7 @@ public class PropertyService {
             propertyRepository.save(property);
             response.setStatus("Success");
             response.setMessage("Operation Successful");
+            response.setCreationId(property.getId().toString());
         } catch (Exception e){
             response.setException(e.getLocalizedMessage());
         }

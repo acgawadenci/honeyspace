@@ -8,7 +8,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class ImageService {
     public ResponseModel storeImage(MultipartFile file, String propertyId) {
         ResponseModel response=new ResponseModel();
-
+        response.setStatus("SUCCESS");
+        response.setMessage("Image is uploaded");
         return response;
     }
 }

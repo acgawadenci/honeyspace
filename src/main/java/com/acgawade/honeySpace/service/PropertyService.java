@@ -26,6 +26,7 @@ public class PropertyService {
     public ResponseModel saveProperty(Property property) {
         ResponseModel response=new ResponseModel();
         try{
+            property.setId(UUID.randomUUID());
             property.setStatus("A");
             property.setPostedOn(LocalDateTime.now());
             property.setPostedBy("userPrinciple");

@@ -14,6 +14,6 @@ public class DemoController {
 
     @GetMapping("/{userName}")
     public String demoResp(@PathVariable String userName) {
-        return "This is also my demo Controller, Hello "+userName+" !!!";
+        return "This is also my demo Controller, Hello User "+userName+" !!!";
     }
 }

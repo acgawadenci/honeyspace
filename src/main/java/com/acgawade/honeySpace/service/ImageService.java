@@ -71,7 +71,7 @@ public class ImageService {
     public void imageTest() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         try {
-            processBuilder.command("bash", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/buildspec.yml --profile 22103228-dev");
+            processBuilder.command("/bin/sh", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
             Process process = processBuilder.start();
             StringBuilder output = new StringBuilder();
             BufferedReader reader = new BufferedReader(

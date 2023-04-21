@@ -27,4 +27,9 @@ public class DemoController {
         imageService.imageTest();
         return "This is my demo Controller, Hello User !!!";
     }
+
+    @GetMapping("/getMessage")
+    public String getMessage() {
+        return "You can see an updated message now...!!!";
+    }
 }

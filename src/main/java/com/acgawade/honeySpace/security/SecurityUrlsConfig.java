@@ -38,7 +38,7 @@ public class SecurityUrlsConfig {
                 .disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/master","/api/v1/auth/login",
-                        "/api/v1/auth/register","/api/v1/property")
+                        "/api/v1/auth/register","/api/v1/property","/test","/getMessage")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

@@ -14,8 +14,9 @@ public class ImageController {
     @Autowired
     ImageService imageService;
 
-    @PostMapping("/{propertyId}")
-    public ResponseEntity<ResponseModel> uploadFile(@RequestParam("file") MultipartFile file, @PathVariable String propertyId) {
+    @PostMapping()
+    public ResponseEntity<ResponseModel> uploadFile(@RequestParam("file") MultipartFile file,
+                                                    @RequestParam("propertyId") String propertyId) {
         return new ResponseEntity<>(imageService.storeImage(file,propertyId), HttpStatus.CREATED);
     }
 }

@@ -28,7 +28,8 @@ public class SecurityUrlsConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.cors().configurationSource(request -> {
             var cors = new CorsConfiguration();
-            cors.setAllowedOrigins(List.of("http://localhost:3000", "http://127.0.0.1:3000","http://103.226.31.73:3000"));
+            cors.setAllowedOrigins(List.of("http://localhost:3000", "http://127.0.0.1:3000",
+                    "http://103.226.31.73:3000", "http://reducafe.eu-west-1.elasticbeanstalk.com"));
             cors.setAllowedMethods(List.of("GET","POST", "PUT", "DELETE", "OPTIONS"));
             cors.setAllowedHeaders(List.of("*"));
             return cors;
@@ -36,7 +37,8 @@ public class SecurityUrlsConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/property/**","/**")
+                .requestMatchers("/api/v1/master","/api/v1/auth/login",
+                        "/api/v1/auth/register","/api/v1/property")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

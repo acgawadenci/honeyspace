@@ -10,4 +10,6 @@ import java.util.UUID;
 @Repository
 public interface PropertyRepository extends JpaRepository<Property, UUID> {
     List<Property> findByStatus(String status);
+
+    List<Property> findByStatusAndPostedBy(String status, String postedBy);
 }

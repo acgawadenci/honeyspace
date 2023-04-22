@@ -95,8 +95,11 @@ public class PropertyService {
         if (nonNull(updatedProp.getName()))
             property.setName(updatedProp.getName());
 
-        if (nonNull(updatedProp.getPrice()))
-            property.setPrice(updatedProp.getPrice());
+        if (nonNull(updatedProp.getRent()))
+            property.setRent(updatedProp.getRent());
+
+        if (nonNull(updatedProp.getDeposit()))
+            property.setDeposit(updatedProp.getDeposit());
 
         if (nonNull(updatedProp.getPostalCode()))
             property.setPostalCode(updatedProp.getPostalCode());

@@ -80,7 +80,7 @@ public class ImageService {
                 output.append(line + "\n");
             }
             int exitVal = process.waitFor();*/
-            Process p = Runtime.getRuntime().exec("aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
+            Process p = Runtime.getRuntime().exec("/bin/aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);

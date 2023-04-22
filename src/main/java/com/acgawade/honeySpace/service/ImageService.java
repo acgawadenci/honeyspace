@@ -67,8 +67,9 @@ public class ImageService {
 
     public void imageTest() {
         ProcessBuilder processBuilder = new ProcessBuilder();
+        String s;
         try {
-            processBuilder.command("/bin/sh", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
+            /*processBuilder.command("/bin/sh", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
             Process process = processBuilder.start();
             // processBuilder.directory(new File(System.getProperty("/bin")));
             StringBuilder output = new StringBuilder();
@@ -78,13 +79,18 @@ public class ImageService {
             while ((line = reader.readLine()) != null) {
                 output.append(line + "\n");
             }
-            int exitVal = process.waitFor();
-            if (exitVal == 0) {
+            int exitVal = process.waitFor();*/
+            Process p = Runtime.getRuntime().exec("aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+            /*if (exitVal == 0) {
                 System.out.println("Success! Message: "+output);
             } else {
                 System.out.println("Failed! Message: "+output);
-            }
-        } catch (IOException | InterruptedException e) {
+            }*/
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

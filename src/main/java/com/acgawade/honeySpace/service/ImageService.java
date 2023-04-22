@@ -15,10 +15,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectResponse;
 import software.amazon.awssdk.services.sso.SsoClient;
 import software.amazon.awssdk.services.sso.auth.SsoCredentialsProvider;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.UUID;
 
 @Service
@@ -71,8 +68,9 @@ public class ImageService {
     public void imageTest() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         try {
-            processBuilder.command("sh", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
+            processBuilder.command("/bin/sh", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
             Process process = processBuilder.start();
+            // processBuilder.directory(new File(System.getProperty("/bin")));
             StringBuilder output = new StringBuilder();
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(process.getInputStream()));

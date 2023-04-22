@@ -69,29 +69,26 @@ public class ImageService {
         ProcessBuilder processBuilder = new ProcessBuilder();
         String s;
         try {
-            /*processBuilder.command("/bin/sh", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
+            processBuilder.command("/bin/aws", "-c", "aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
             Process process = processBuilder.start();
-            // processBuilder.directory(new File(System.getProperty("/bin")));
             StringBuilder output = new StringBuilder();
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(process.getInputStream()));
             String line;
             while ((line = reader.readLine()) != null) {
-                output.append(line + "\n");
+                output.append(line).append("\n");
             }
-            int exitVal = process.waitFor();*/
-            Process p = Runtime.getRuntime().exec("/bin/aws s3 cp /var/app/current/src/main/resources/static/axe.jpg s3://x22103228-cpp/axe.jpg --profile 22103228-dev");
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            while ((s = stdInput.readLine()) != null) {
-                System.out.println(s);
-            }
-            /*if (exitVal == 0) {
-                System.out.println("Success! Message: "+output);
+            int exitVal = process.waitFor();
+
+            if (exitVal == 0) {
+                System.out.println("Success! Message: " + output);
             } else {
-                System.out.println("Failed! Message: "+output);
-            }*/
+                System.out.println("Failed! Message: " + output);
+            }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -24,7 +24,8 @@ public class Property {
     private String eircode;
     private String description;
     private String postalCode;
-    private BigDecimal price;
+    private BigDecimal rent;
+    private BigDecimal deposit;
     private BigDecimal area;
     private LocalDate availableFrom;
     private String energyRatings;

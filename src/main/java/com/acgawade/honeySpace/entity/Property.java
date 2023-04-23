@@ -17,7 +17,6 @@ import java.util.UUID;
 @Data
 public class Property {
     @Id
-    @GeneratedValue
     private UUID id;
     private String name;
     private String address;

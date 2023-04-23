@@ -33,6 +33,7 @@ public class Property {
     private Integer bathrooms;
     private List<String> amenities;
     private List<String> images;
+    private String propertyType;
     private String status;
     private String postedBy;
     private LocalDateTime postedOn;

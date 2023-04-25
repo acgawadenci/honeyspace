@@ -181,12 +181,12 @@ public class PropertyService {
 
     private void sendEmail(User productUser, User enquiryUser, Property product) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("reduca.app@gmail.com");
+        message.setFrom("honeyspace.app@gmail.com");
         message.setTo(productUser.getEmail());
-        message.setSubject("Enquiry for your cataloged product : " + product.getName());
-        message.setText("A person has made an enquiry for your product : "
+        message.setSubject("Enquiry for your cataloged property : " + product.getName());
+        message.setText("A person has made an enquiry for your property : "
                 + product.getName() +
-                ", kindly Email the potential buyer of your product. Here Is The Details Of Enquirer. " +
+                ", kindly Email the potential buyer of your property. Here Is The Details Of Enquirer. " +
                 " Name: " + enquiryUser.getFirstname() + " " + enquiryUser.getLastname() + " " +
                 " Email ID: " + enquiryUser.getEmail());
         this.emailSender.send(message);

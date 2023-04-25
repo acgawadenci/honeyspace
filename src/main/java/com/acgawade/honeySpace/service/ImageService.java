@@ -12,8 +12,6 @@ import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.ObjectCannedACL;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectResponse;
-import software.amazon.awssdk.services.sso.SsoClient;
-import software.amazon.awssdk.services.sso.auth.SsoCredentialsProvider;
 
 import java.io.*;
 import java.util.UUID;
